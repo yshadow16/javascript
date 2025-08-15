@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    <p>Digite seu nome: <input type="text" name="ynome" id="ynome"></p>
+    <p>Onde você mora?: <input type="text" name="txtnac" id="txtnac"></p>
+    <input type="button" value="Enviar" onclick="enviar()">
+    <div id="info">
+
+    </div>
+    <script>
+        function enviar(){
+            var nacionalidade = window.document.querySelector('input#txtnac')
+            var ynome = window.document.querySelector('input#ynome')
+            var res = window.document.querySelector('div#info')
+            var nac = nacionalidade.value
+            var outnome = ynome.value
+            res.innerHTML = `Olá ${outnome}, você é do país ${nac}`
+            if (nac == 'Brasil') {
+                res.innerHTML += `<p>Você é brasileiro</p>`
+            } else {
+                res.innerHTML += `<p>Você é estrangeiro</p>`
+            }
+        }
+    </script>
+</body>
+</html>
